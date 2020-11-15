@@ -1,0 +1,22 @@
+.smart-section {
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    
+    .container {
+        z-index: 1;
+    }
+}
+
+// PARTICLES.JS 
+.particles-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    pointer-events: none;
+    z-index: 0; 
+    filter: blur(3px);
+}
+

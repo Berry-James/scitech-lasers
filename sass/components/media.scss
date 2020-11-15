@@ -1,0 +1,63 @@
+@media all and (max-width: 920px) {
+
+    .gradient-h1 {
+        text-align: center !important;
+        margin: 0 !important;
+    }
+
+    .title {
+        text-align: center !important;
+    }
+
+    .home-content-wrapper {
+        flex-direction: column;
+        margin-top: 3rem;
+
+        .column {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+
+            .container {
+                align-items: center;
+                justify-content: center !important;
+            }
+        }
+
+    }
+    .wave-column {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin-bottom:  50px;
+    }
+    .main-img {
+        width: 80% !important;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .nav-links {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .laser-diagram {
+        padding: 0 15px;
+    }
+
+    .quiz-column {
+        margin-left: 0 !important;
+    }
+
+    .question-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 5vw;
+    }
+}

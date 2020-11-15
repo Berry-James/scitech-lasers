@@ -1,0 +1,246 @@
+@charset "utf-8";
+
+
+
+
+
+// FONTS
+@import url('https://fonts.googleapis.com/css2?family=Marko+One&family=Nunito+Sans&display=swap');
+
+// Set Brand Colours
+$purple: #8A4D76;
+$gradient: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+
+// set brand types
+$title: 'Marko One', serif;
+$body-text: 'Nunito Sans', sans-serif;
+
+// Update bulma fonts
+$family-secondary: $title;
+$family-primary: $body-text;
+$background-primary: $gradient;
+
+// TEXT SIZES
+$size-1: 10rem;
+$size-2: 6rem;
+$size-3: 3rem;
+$size-4: 2rem;
+$size-5: 1.5rem;
+$size-6: 1.2rem;
+
+// update bulma tooltips
+$tooltip-font-size: $size-5;    
+
+// Update bulma colours
+$primary: #fff;
+
+// Gradients
+$g-1: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+
+
+
+
+
+// update component variables
+$body-background-color: #171717;
+
+// CUSTOM gradient colours
+$primary-gradient-colour: #ff4e00;
+$primary-gradient-curve: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+
+
+/* @import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/elements/image.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";
+@import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma/sass/layout/hero.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";
+@import "../node_modules/bulma/sass/grid/_all.sass";
+@import "../node_modules/bulma/sass/helpers/typography.sass";
+@import "../node_modules/bulma/sass/components/level.sass"; */
+
+@import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/@creativebulma/bulma-tooltip/dist/bulma-tooltip.min.css";
+
+// ANIMATIONS
+@keyframes textAnim {
+    to {
+        background-position: right center;
+    }
+}
+
+@keyframes navEntrance {
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes button {
+    from {
+        background-position: center right;
+    }
+    to {
+        background-position: center left;
+    }
+}
+
+// sitewide
+html, body {
+    margin: 0;
+    color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    line-height: 100%;
+}
+
+h1 {
+    color: black;
+
+  } 
+
+strong {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    animation: textAnim 8s linear infinite;
+    animation-direction: alternate;
+    background-image: $g-1;
+    line-height: 100%;
+    margin: 0;
+
+}
+
+// Home page
+.home-gradient {
+    background-color: $primary-gradient-colour;
+    background-image: $primary-gradient-curve;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+ 
+.home-content-wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    
+} 
+
+.section {
+    padding: 0;
+    background: none;
+    background-color: none;
+}
+
+.main-img {
+    width: 40%;
+    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.2));
+}
+
+.gradient-h1 {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    animation: textAnim 8s linear infinite;
+    animation-direction: alternate;
+    background-image: $g-1;
+    line-height: 100%;
+    margin: 0;
+}
+
+.particles {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+// Diagram
+.laser-diagram {
+    width: 100%;
+    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.5));
+    
+}
+
+
+// NAVBAR
+.hamburger-btn {
+    transition: 0.3s ease-out;
+    z-index: 10;
+    position: fixed;
+    left: 25px;
+}
+
+nav {
+    z-index: 2;
+}
+
+@keyframes navEntry {
+    from {
+        transform: rotate(45deg) translateY(-30px);
+    }
+    to {
+        transform: rotate(0deg) translateY(0px);
+    }
+}
+
+.nav-links {
+    animation: navEntrance 0.3s ease-out;
+    animation-fill-mode: forwards;
+    transform: translateY(-80px);
+    border-radius: 0 0 15px 15px;
+    padding: 15px;
+    background-color: #eeeeee;
+    position: fixed;
+    width: 100vw;
+    height: 80px;
+    z-index: 1;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+
+    a {
+        z-index: 3;
+        animation: navEntry 0.2s ease-in-out;
+        transition: 0.2s;
+    }
+
+    a:hover {
+        transform: translateY(-2px);
+    }
+}
+
+
+
+.title {
+    font-weight: normal;
+}
+
+// EXPERIMENT BUTTON
+
+.experiment-start {
+    transition: 0.3s;
+    border: none;
+}
+.experiment-start:hover {
+    background-image: $g-1;
+    background-size: 200%;
+    animation: button 1s linear infinite alternate-reverse;
+    filter: drop-shadow(0 0 3rem rgba(255, 255, 255, 0.8));
+    color: white;
+}
+
+// MODAL
+.modal {
+    position: absolute;
+}
+
+// IMPORT COMPONENTS
+@import './components/library.scss';
+@import './components/game.scss';
+@import './components/quiz.scss';
+@import './components/lasers.scss';
+@import './components/media.scss';

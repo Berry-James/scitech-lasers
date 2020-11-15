@@ -4,7 +4,8 @@ module.exports = {
     /* ... */
   },
   plugins: [
-    /* ... */
+    ['@snowpack/plugin-sass', { style: 'compressed' }],
+    ["@snowpack/plugin-optimize", {/* ... */}]
   ],
   install: [
     /* ... */

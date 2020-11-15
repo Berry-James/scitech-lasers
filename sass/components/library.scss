@@ -1,0 +1,39 @@
+.has-border-right {
+    border-right: 2px solid #2f2f2f;
+}
+
+.has-border-bottom {
+    border-bottom: 3px solid #fff;
+}
+
+.has-border {
+    border: 5px solid #fff;
+}
+
+.is-fixed {
+    position: fixed;
+}
+
+.is-display-none {
+    display: none !important;
+}
+
+.has-background {
+    background: 
+    linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%) !important;
+
+}
+
+.in-text-img {
+    display: inline !important;
+
+}
+
+.is-active-hamburger {
+    filter: invert(1);
+    transform: rotate(90deg);
+}
+
+.is-active-celebration {
+    display: block !important;
+}

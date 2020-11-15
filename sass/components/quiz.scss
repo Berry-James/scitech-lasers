@@ -1,0 +1,166 @@
+.question-content {
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+/*     border: 1px solid white;
+ */    padding: 1.6rem;
+    border-radius: 10px;
+    background-color: #121212;
+    position: relative;
+    transition: 0.3s;
+    min-width: fit-content;
+
+    a {
+        color: #fff;
+    }
+
+    button {
+        max-width: 150px;
+    }
+
+    @keyframes nextBtnAnim {
+        from {
+            box-shadow: 0 0 0.5rem rgba(255, 255,255, 0.3);
+            background-position: center left;
+        }
+        to {
+            box-shadow: 0 0 1rem rgba(255, 255,255, 0.5);
+            background-position: center right;
+
+        }
+    }
+
+    .next-btn {
+        animation: nextBtnAnim 0.5s linear infinite alternate;
+        background: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+        background-size: 200%;
+        background-position: center left;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+/*         box-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
+ */    }
+
+    .answer-border {
+        border-radius: 5px;
+        padding: 3px;
+        background: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        background-size: 200%;
+        background-position: center left;
+        transition: 0.2s;
+    }
+
+    .answer {
+        padding: 5px 15px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row-reverse;
+        text-align: left;
+        transition: 0.5s;
+        background-color: #171717;
+        color: #fff;
+/*         background: #fff;
+ */    }
+
+ .answer-border:hover {
+     background-position: center right;
+ }
+    
+
+    .answer:hover {
+        color: #fff;
+        text-decoration: none;
+        }
+
+    .answer-wrapper {
+        display: inline-flex;
+        align-items: center;
+        min-width: 300px;
+
+        label {
+            margin-right: 15px;
+        }
+
+
+    }
+
+
+     
+    
+}
+
+@keyframes correctAnim {
+    from {
+        background-position: left center;
+    }
+    to {
+        background-position: right center;
+    }
+}
+
+
+
+.correct-answer {
+    animation: correctAnim 1s linear alternate infinite;
+    background-image: linear-gradient(to right, #DA22FF 0%, #9733EE  51%, #DA22FF  100%);
+    background-size: 200%;
+    transition: 0.5s;
+}
+
+.wrong-answer {
+    color: tomato !important;
+}
+
+
+.quiz-columns {
+    z-index: 3;
+    position: relative;
+    
+}
+
+.particles-celebration {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    pointer-events: none;
+    z-index: 0; 
+}
+
+.celebration-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    background: linear-gradient(0deg, rgba(7,7,7,1) 0%, rgba(23,23,23,1) 40%, rgba(151,151,151,0) 100%);
+}
+
+@keyframes dimAnim {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.dim {
+    animation: dimAnim 0.5s ease-out;
+    opacity: 1;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+}
