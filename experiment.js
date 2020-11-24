@@ -1,0 +1,124 @@
+import anime from 'animejs';
+import { Modal } from './Components/Modal.js';
+
+// TEST
+Modal.show('Build your very own laser!', 'Assemble the laser from the parts in the box.  Click on the part and then choose where you think it belongs on the diagram')
+
+// HAMBURGER MENU
+const burgerBtn = document.querySelector(".hamburger-btn");
+const navLinks = document.querySelector(".nav-links");
+burgerBtn.addEventListener("click", (e) => {
+	navLinks.classList.toggle("is-display-none");
+	burgerBtn.classList.toggle('is-active-hamburger');
+});
+
+class Parts {
+    constructor(number, position, name, description, image) {
+        this.number = number;
+        this.position = position;
+        this.name = name;
+        this.description = description;
+        this.image = image;
+    }
+}
+
+const Experiment = {
+
+    active: null,
+    counter: 0,
+
+    createParts: () => {
+
+        const rootEL = document.querySelector(".experiment");
+
+        const P1 = new Parts(1, 4, 'Focussing Mirror', 'a focussing mirror ', './imgs/laser/parts/mirror.svg');
+        const P2 = new Parts(2, 3, 'Laser Diode', 'a laser diode does stuff', './imgs/laser/parts/diode.png');
+        const P3 = new Parts(3, 1, 'Battery', 'BATTERY HERE', './imgs/laser/parts/battery.png');
+        const P4 = new Parts(4, 2, 'Laser Driver', 'DRIVER HERE', './imgs/laser/parts/driver.png');
+
+        const parts = [P1, P2, P3, P4];
+
+        const partsContainer = document.createElement("div");
+        partsContainer.classList.add("columns", "parts-container");
+        
+        parts.forEach(part => {
+            part.el = document.createElement("div");
+            part.img = document.createElement("img");
+            part.el.setAttribute("data-tooltip", part.description);
+            part.img.setAttribute("src", part.image);
+            part.el.classList.add("ex-part", "column", "has-tooltip-bottom");
+            part.el.appendChild(part.img);
+            partsContainer.appendChild(part.el);
+
+            part.el.addEventListener("click", () => {
+                const allParts = document.querySelectorAll('.ex-part');
+                allParts.forEach(part => {
+                    part.classList.remove("ex-active");
+                })
+                part.el.classList.add("ex-active");
+                Experiment.active = part.position;
+                
+            })
+
+            rootEL.appendChild(partsContainer);
+        })
+
+        const progressBar = document.createElement("div");
+        progressBar.classList.add("level", "progress-bar");
+        rootEL.appendChild(progressBar);
+        
+        function createProgressEntry() {
+            const entry = document.createElement("div");
+            entry.className = 'progress-entry';
+            progressBar.appendChild(entry);
+        }
+
+        const container = document.createElement("div");
+        container.classList.add("columns", "slots-container");
+        container.img = document.createElement("img");
+        container.img.setAttribute("src", "./imgs/laser/slots/laser.png");
+        container.img.className = 'laser-diagram';
+        container.appendChild(container.img);
+        rootEL.appendChild(container);
+
+        container.slots = [
+            {position: 1, id: 'battery'},
+            {position: 2, id: 'circuits'},
+            {position: 3, id: 'diode'},
+            {position: 4, id: 'lens'}
+        ];
+
+        container.slots.forEach(slot => {
+            slot.el = document.createElement("button");
+            slot.el.classList.add("ex-slot", "has-text-primary");
+            slot.el.id = slot.id;
+            slot.val = slot.position;
+
+            container.appendChild(slot.el);
+
+            slot.el.addEventListener("click", () => {
+                if(slot.val === Experiment.active) {
+                    Experiment.counter ++;
+                    createProgressEntry();
+                    slot.el.classList.add("ex-slot-correct");
+                    slot.el.innerText = '✔';
+                    const allParts = document.querySelectorAll(".ex-part");
+                    allParts.forEach(part => {
+                        part.classList.remove('ex-active');
+                    })
+
+                } else if(slot.val !== Experiment.active) {
+                    console.log('WRONG')
+                }
+                if(Experiment.counter == 4) {
+                    Modal.show('gz', 'You did it!')
+                }          
+            })
+            
+        })
+
+
+    },
+}
+
+Experiment.createParts();

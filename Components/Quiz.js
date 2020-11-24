@@ -1,4 +1,4 @@
-import anime from '../node_modules/animejs/lib/anime.es';
+import anime from 'animejs';
 
 const Quiz = {
   
@@ -122,10 +122,17 @@ const Quiz = {
         } else if (el.correct === true && Quiz.count === 4){
           const celebration = document.querySelector(".particles-celebration");
           const overlay = document.querySelector(".celebration-overlay");
+          questionName.style.display = 'none';
+          questionNumber.style.display = 'none';
+          answerBox.innerHTML = null;
+          answerBox.innerHTML = '<h2>Congratulations!</h2><p>You have completed the quiz</p><p>If you haven\'t already, check out the experiment page!</p>'
+          const exBtn = document.createElement("button");
+          exBtn.classList.add("button");
+          exBtn.innerText = '🧪 Experiment'
+          answerBox.appendChild(exBtn);
           celebration.classList.add("is-active-celebration");
           overlay.classList.add("is-active-celebration");
-          const quizModal = document.querySelector("#quiz-modal");
-          quizModal.classList.add("is-active");
+
 
 
 
@@ -143,23 +150,3 @@ const Quiz = {
 }
 
 export { Quiz } 
-/* 
-const Quiz = class {
-
-  constructor(number, score, content) {
-
-    this.number = number;
-    this.score = score;
-    this.content = content;
-  }
-
-  questionOne() {
-    const a1 = new Quiz(1, false, "123");
-    const a2 = new Quiz(1, false, "123");
-    const a3 = new Quiz(1, false, "123");
-    const a4 = new Quiz(1, false, "123");
-    console.log(this);
-  }
-} */
-
-/* export { Quiz } */

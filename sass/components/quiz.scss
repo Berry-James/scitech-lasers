@@ -2,13 +2,22 @@
     z-index: 20;
     display: flex;
     flex-direction: column;
-/*     border: 1px solid white;
- */    padding: 1.6rem;
+    padding: 1.6rem;
     border-radius: 10px;
     background-color: #121212;
     position: relative;
     transition: 0.3s;
     min-width: fit-content;
+
+    h2 {
+        color: #fff;
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
 
     a {
         color: #fff;
@@ -121,7 +130,7 @@
 }
 
 .particles-celebration {
-    display: none;
+    opacity: 0;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -133,7 +142,7 @@
 }
 
 .celebration-overlay {
-    display: none;
+    opacity: 0;
     position: absolute;
     top: 0;
     bottom: 0;

@@ -6,13 +6,17 @@
 
 // FONTS
 @import url('https://fonts.googleapis.com/css2?family=Marko+One&family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+// FULLPAGE
+@import './components/fullpage.min.css';
 // Set Brand Colours
 $purple: #8A4D76;
 $gradient: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
 
 // set brand types
-$title: 'Marko One', serif;
+/* $title: 'Marko One', serif;
+ */$title: 'Inter', sans-serif;
 $body-text: 'Nunito Sans', sans-serif;
 
 // Update bulma fonts
@@ -101,6 +105,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     color: black;
+    font-weight: 600;
 
   } 
 
@@ -115,8 +120,17 @@ strong {
     margin: 0;
 
 }
+// MODAL
+.modal-content {
+    border-radius: 15px;
+    transition: 0.5s all;
+}
 
-// Home page
+.modal-background {
+    backdrop-filter: blur(10px);
+}
+
+// HOME PAGE
 .home-gradient {
     background-color: $primary-gradient-colour;
     background-image: $primary-gradient-curve;
@@ -130,7 +144,18 @@ strong {
     display: flex;
     align-items: center;
     
+    .column {
+        z-index: 2;
+    }
 } 
+
+#particles-js-home {
+    background: rgba(0,0,0,0.5);
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
 
 .section {
     padding: 0;
@@ -152,6 +177,10 @@ strong {
     background-image: $g-1;
     line-height: 100%;
     margin: 0;
+}
+
+.title {
+    opacity: 0;
 }
 
 .particles {
@@ -213,12 +242,6 @@ nav {
     }
 }
 
-
-
-.title {
-    font-weight: normal;
-}
-
 // EXPERIMENT BUTTON
 
 .experiment-start {
@@ -238,9 +261,22 @@ nav {
     position: absolute;
 }
 
+// DARKEN
+.darken {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+// USES LIST
+.uses-list {
+    li {
+        opacity: 0;
+        transform: translateX(20vw);
+    }
+}
+
 // IMPORT COMPONENTS
 @import './components/library.scss';
-@import './components/game.scss';
+@import './components/experiment.scss';
 @import './components/quiz.scss';
 @import './components/lasers.scss';
 @import './components/media.scss';

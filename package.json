@@ -9,6 +9,7 @@
     "@creativebulma/bulma-tooltip": "^1.2.0",
     "@snowpack/plugin-babel": "^2.1.4",
     "@snowpack/plugin-optimize": "^0.2.9",
+    "@snowpack/plugin-webpack": "^2.1.1",
     "node-sass": "^5.0.0",
     "snowpack": "^2.17.1"
   },
@@ -18,6 +19,7 @@
     "bulma": "^0.9.1",
     "fullpage.js": "^3.0.9",
     "gsap": "^3.5.1",
+    "mustache": "^4.0.1",
     "particles.js": "^2.0.0",
     "wavify": "^1.0.0"
   }

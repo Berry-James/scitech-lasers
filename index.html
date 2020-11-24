@@ -5,27 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Starter Snowpack App" />
     <link rel="stylesheet" type="text/css" href="./sass/mystyles.css" />
-    <link rel="stylesheet" type="text/css" href="./node_modules/fullpage.js/dist/fullpage.min.css" />
-    <title>Scitech</title>
+<!--     <link rel="stylesheet" type="text/css" href="./node_modules/fullpage.js/dist/fullpage.min.css" />
+ -->    <title>Scitech</title>
   </head>
   <body>
-    <script src="node_modules/fullpage.js/dist/fullpage.min.js"></script>
     <script type="module" src="./index.js"></script>
-    <script src="./node_modules/particles.js/particles.js"></script>
+    <script src="./scripts/particles.js"></script>
     <script defer src="https://kit.fontawesome.com/6b3561d7c5.js" crossorigin="anonymous"></script>
-    <script src="./node_modules/particles.js/particles.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-
 
     <nav class="burger-container is-flex is-justify-content-flex-end is-fixed p-5">
       <a class="hamburger-btn"><i class="fas fa-bars has-text-primary is-size-4"></i></a>
     </nav>
-    <div class="level nav-links is-display-none">
+    <div class="level nav-links has-text-weight-semibold nav-is-out">
       <a class="level-item has-text-dark is-family-secondary" href="#home"><img src="./imgs/icons/homepage.svg" class="image is-32x32"></a>
       <a class="level-item has-text-dark is-family-secondary has-text-centered is-size-5-mobile" href="#whatIs">What is a Laser?</a>
       <a class="level-item has-text-dark is-family-secondary has-text-centered is-size-5-mobile" href="#whatIn">Inside a Laser</a>
       <a class="level-item has-text-dark is-family-secondary has-text-centered is-size-5-mobile" href="#whatCan">What can we do with Lasers?</a>
-      <a class="level-item has-text-dark is-family-secondary has-text-centered is-size-5-mobile" href="#game">🧪 Experiment</a>
+      <a class="level-item has-text-dark is-family-secondary has-text-centered is-size-5-mobile" href="#game">🧪 Build a Laser</a>
       <a class="level-item has-text-dark is-family-secondary has-text-centered is-size-5-mobile" href="#quiz"><img src="./imgs/icons/light-bulb.svg" class="image is-32x32">Quiz</a>
     </div>
     <!-- HOME SLIDES -->
@@ -39,15 +36,18 @@
           <div class="column is-two-fifths is-offset-1">
             <div class="container">
               <div class="container is-flex is-justify-content-flex-end is-justify-content-center-mobile">
-                <h3 class="is-family-secondary is-size-4 is-size-5-mobile has-text-right has-text-centered-mobile has-text-primary mb-3">Learn about...</h3>
+                <h3 class="is-family-secondary is-size-4 is-size-5-mobile has-text-right has-text-centered-mobile has-text-primary mb-3 learn-text">Learn about...</h3>
               </div>
               <h1 class="is-family-secondary is-size-2-widescreen is-size-3-desktop is-size-3-mobile is-size-3-tablet has-text-right has-text-centered-mobile has-text-primary title">Laser Technology</h1>
             </div>
           </div>
           <!-- HOME - TEXT COLUMN -->
           <div class="column is-three-fifths wave-column">
-            <img class="main-img" src="./imgs/icons/barcode.svg">
+            <img class="main-img diagram" src="./imgs/icons/barcode.svg">
           </div>
+        </div>
+        <div id="particles-js-home" class="particles-bg"></div>
+
       </article>
 
       <!-- 2nd Slide -->
@@ -55,12 +55,12 @@
         <div class="columns">
           <div class="column is-5 is-offset-1 has-border-right">
             <div class="container">
-              <h1 class="is-family-secondary is-size-2 gradient-h1 is-size-3-mobile has-text-right mr-6">What is a Laser?</h1>
+              <h1 class="is-family-secondary is-size-2 gradient-h1 is-size-3-mobile has-text-right mr-6 title">What is a Laser?</h1>
             </div>
           </div>
           <div class="column is-5 p-6">
-            <p class="is-family-primary has-text-primary is-size-4 is-size-5-mobile mb-5">Laser is an acronym for <strong>light amplification by stimulated emission of radiation.</strong></p>
-            <p class="is-family-primary has-text-primary is-size-5 mt-5 is-size-6-mobile">A laser beam is created when electrons <img src="imgs/icons/molecule.svg" class="in-text-img image is-32x32"> within atoms in special gases absorb energy from an electrical current. When these electrons return to their normal state, they emit photons which create light. These photons are all the same wavelength, making them coherent or in other words the same colour.</p>
+            <p class="is-family-primary has-text-primary is-size-4 is-size-5-mobile mb-5 sub-text">Laser is an acronym for <strong>light amplification by stimulated emission of radiation.</strong></p>
+            <p class="is-family-primary has-text-primary is-size-5 mt-5 is-size-6-mobile body-text">A laser beam is created when electrons <img src="imgs/icons/molecule.svg" class="in-text-img image is-32x32"> within atoms in special gases absorb energy from an electrical current. When these electrons return to their normal state, they emit photons which create light. These photons are all the same wavelength, making them coherent or in other words the same colour.</p>
           </div>
           <div class="column is-1"></div>
         </div>
@@ -71,17 +71,17 @@
         <div class="columns">
           <div class="column is-12">
             <div class="container">
-              <h1 class="is-family-secondary is-size-2 gradient-h1 is-size-4-mobile has-text-centered mb-6">Inside a Laser Pointer</h1>
+              <h1 class="is-family-secondary is-size-2 gradient-h1 is-size-4-mobile has-text-centered mb-6 title">Inside a Laser Pointer</h1>
             </div>
           </div>
         </div>
         <div class="columns">
           <div class="column is-5 is-offset-1 has-border-right">
-            <img src="./imgs/diagrams/laser.svg" class="laser-diagram">
+            <img src="./imgs/diagrams/laser.svg" class="laser-diagram diagram">
           </div>
           <div class="column is-6 p-6">
-            <p class="is-family-primary has-text-primary is-size-4 mb-5 is-size-5-mobile">Lasers are made up of many small components which work together to produce light.</p>
-            <p class="is-family-primary has-text-primary is-size-5 mt-5 is-size-6-mobile">A laser beam is created when electrons within atoms in special gases absorb energy from an electrical current. When these electrons return to their normal state, they emit photons which create light. These photons are all the same wavelength, making them coherent or in other words the same colour.</p>
+            <p class="is-family-primary has-text-primary is-size-4 mb-5 is-size-5-mobile sub-text">Lasers are made up of many small components which work together to produce <strong>light.</strong></p>
+            <p class="is-family-primary has-text-primary is-size-5 mt-5 is-size-6-mobile body-text">A laser beam is created when electrons within atoms in special gases absorb energy from an electrical current. When these electrons return to their normal state, they emit photons which create light. These photons are all the same wavelength, making them coherent or in other words the same colour.</p>
           </div>
         </div>
       </article>
@@ -91,12 +91,12 @@
         <div class="columns">
           <div class="column is-5 is-offset-1 has-border-right">
             <div class="container">
-              <h1 class="is-family-secondary is-size-2 gradient-h1 is-size-3-mobile has-text-right has-text-centered-mobile pl-3 pr-3">What can we do with lasers?</h1>
+              <h1 class="is-family-secondary is-size-2 gradient-h1 is-size-3-mobile has-text-right has-text-centered-mobile pl-3 pr-3 title">What can we do with lasers?</h1>
             </div>
           </div>
           <div class="column is-6 p-6">
-            <p class="is-family-primary has-text-primary is-size-4 mb-5 is-size-5-mobile">Lasers have many uses in our modern world, including:</p>
-            <ul class="is-family-primary has-text-primary is-size-5 is-size-6-mobile is-flex is-flex-direction-column">
+            <p class="is-family-primary has-text-primary is-size-4 mb-5 is-size-5-mobile sub-text">Lasers have many uses in our modern world, including:</p>
+            <ul class="is-family-primary has-text-primary is-size-5 is-size-6-mobile is-flex is-flex-direction-column uses-list">
               <li class="is-inline-flex m-3"><img src="./imgs/icons/surgery.svg" class="image is-32x32 is-inline mr-5">Surgery</li>
               <li class="is-inline-flex m-3"><img src="./imgs/icons/telescope.svg" class="image is-32x32 is-inline mr-5">Astronomy</li>
               <li class="is-inline-flex m-3"><img src="./imgs/icons/laser-beam.svg" class="image is-32x32 is-inline mr-5">Laser cutting</li>
@@ -110,14 +110,15 @@
       <!-- 5th Slide -->
       <article class="section smart-section">
         <div class="container">
-        <div class="level">
-          <h1 class="level-item is-size-1-widescreen is-size-2-desktop is-size-2-tablet is-size-4-mobile is-family-secondary is-size-3-mobile has-text-primary is-family-secondary has-text-centered-mobile">Smart Lasers</h1>
+        <div class="level ex-title-container is-flex is-flex-direction-column">
+          <h1 class="level-item is-size-1-widescreen is-size-2-desktop is-size-2-tablet is-size-4-mobile is-family-secondary is-size-3-mobile has-text-primary is-family-secondary has-text-centered-mobile ex-title">Build a Laser</h1>
+          <span class="ex-underline"></span>
         </div>
-        <div class="level container has-text-centered is-size-5 is-size-6-mobile has-text-primary pl-6 pr-6">
-          <p><b>Smart lasers</b> are able to track different shapes, bounce off them or trace around them.  They have many uses in the real world, such as in advanced motion tracking and mapping.</p>
+        <div class="container has-text-centered is-size-5 is-size-6-mobile has-text-primary pl-6 pr-6">
+          <p>Build your own laser in this interactive demonstration.</p>
         </div>
         <div class="container is-flex is-justify-content-center">
-          <a class="button is-size-5 experiment-start mt-6" href="./experiment.html">🧪 Start the Experiment</a>
+          <a class="button is-size-5 experiment-start mt-6" href="./experiment.html">🧪 Start Building!</a>
         </div>
       </div>
         <div id="particles-js" class="particles-bg"></div>
@@ -128,19 +129,10 @@
         <div class="celebration-overlay"></div>
         <div id="particles-js-celebration" class="particles-celebration"></div>
 
-        <!-- MODAL -->
-        <div class="modal" id="quiz-modal">
-          <div class="modal-background"></div>
-          <div class="modal-content has-text-centered has-background-primary has-text-dark p-4">
-            <h3 class="is-family-secondary is-size-4 gradient-h1 mb-5">Congratulations!</h3>
-            <p>I hope you have enjoyed learning about lasers!</p>
-          </div>
-          <button class="modal-close"></button>
-        </div>
 
         <div class="columns quiz-columns">
           <div class="column is-two-fifths">
-            <h1 class="is-size-1-widescreen is-size-2-desktop is-size-2-tablet is-size-3-mobile is-family-secondary home-h1 gradient-h1 has-text-right">Quiz</h1>
+            <h1 class="is-size-1-widescreen is-size-2-desktop is-size-2-tablet is-size-3-mobile is-family-secondary home-h1 gradient-h1 has-text-right title">Quiz</h1>
             <p class="has-text-right has-text-centered-mobile is-size-5-desktop is-size-6-tablet is-size-6-mobile mt-3">Test your knowledge on lasers</p>
           </div>
           <div class="column is-two-fifths ml-6 quiz-column">
@@ -160,7 +152,18 @@
       </article>
     </main>
 
-
+    <!-- MODAL -->
+    <script type="text/template" id="modal-template">
+      <div class="modal-background"></div>
+      <div class="modal-content has-text-centered has-background-primary has-text-dark p-4">
+        <div class="header"></div>
+        <div class="modal-body"></div>
+        <div class="modal-confirm">
+          <button class="button">Confirm</button>
+        </div>
+      </div>
+      <button class="modal-close"></button>
+    </script>
 
 
   </body>

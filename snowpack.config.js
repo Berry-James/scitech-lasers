@@ -5,13 +5,18 @@ module.exports = {
   },
   plugins: [
     ['@snowpack/plugin-sass', { style: 'compressed' }],
-    ["@snowpack/plugin-optimize", {/* ... */}]
+    ["@snowpack/plugin-optimize", { }],
+/*     ["@snowpack/plugin-webpack", { }], */
   ],
   install: [
-    /* ... */
+/*     "animejs",
+    "bulma",
+    "fullpage.js",
+    "gsap",
+    "particles.js",
+    "wavify" */
   ],
   installOptions: {
-    /* ... */
   },
   devOptions: {
     /* ... */

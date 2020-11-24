@@ -35,5 +35,182 @@
 }
 
 .is-active-celebration {
-    display: block !important;
+    opacity: 1 !important;
+}
+
+
+.is-animating-title {
+    animation: titleAnim 0.8s ease-in-out forwards;
+    animation-fill-mode: forwards;
+}
+
+.is-animating-subtext {
+    transform: translateX(100vw);
+    animation: subtextAnim 0.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.is-animating-body {
+    opacity: 0;
+    animation: bodyTextAnim 0.5s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+.is-animating-modal {
+    opacity: 0;
+    animation: modalEntrance 0.5s ease-out forwards;
+}
+
+.modal-is-leaving {
+    animation: modalEntrance 1s reverse forwards;
+}
+
+
+.is-animating-ex-underline {
+    animation: exUnderline 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.is-animating-ex-title {
+    animation: exTitle 1s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.is-animating-img {
+    animation: imgEntrance 1s ease-out forwards;
+    animation-delay: 0s;
+}
+
+.is-animating-learn {
+    animation: learnEntrance 1s ease-out forwards;
+}
+
+// NAVBAR
+.nav-is-out {
+    top: -80px;
+    transition: 0.5s;
+
+}
+
+.nav-is-in {
+    top: 0px;
+    transition: 0.5s;
+}
+
+.is-leaving-modal {
+    animation: modalExit 1s linear forwards;
+}
+
+
+// PRECURSORS
+.diagram {
+    transform: scale(0);
+}
+.body-text {
+    opacity: 0;
+}
+
+.sub-text {
+    opacity: 0;
+}
+
+.ex-underline {
+    transform: scale(0);
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+    border-radius: 25px;
+}
+
+.ex-title {
+    opacity: 0;
+}
+
+// ANIMATIONS
+@keyframes modalExit {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
+}
+@keyframes learnEntrance {
+    from {
+        transform: translateY(-100vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0vw);
+        opacity: 1;
+    }
+}
+@keyframes imgEntrance {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+@keyframes exTitle {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes exUnderline {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+@keyframes modalEntrance {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes titleAnim {
+    from {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+
+@keyframes subtextAnim {
+    from {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+
+@keyframes bodyTextAnim {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }

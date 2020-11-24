@@ -1,3 +1,4 @@
+import fullpage from 'fullpage.js';
 
 const FullPage = {
 
