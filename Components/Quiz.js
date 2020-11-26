@@ -125,7 +125,7 @@ const Quiz = {
           questionName.style.display = 'none';
           questionNumber.style.display = 'none';
           answerBox.innerHTML = null;
-          answerBox.innerHTML = '<h2>Congratulations!</h2><p>You have completed the quiz</p><p>If you haven\'t already, check out the experiment page!</p>'
+          answerBox.innerHTML = '<h2>Congratulations!</h2><p>You have completed the quiz</p><p>If you haven\'t already, check out the "build a laser" page!</p>'
 /*           const exBtn = document.createElement("button");
           exBtn.classList.add("button");
           exBtn.innerText = '🧪 Experiment'

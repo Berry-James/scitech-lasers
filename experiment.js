@@ -48,7 +48,7 @@ const Experiment = {
         const partsContainer = document.createElement("div");
         partsContainer.classList.add("columns", "parts-container");
         
-        parts.forEach(part => {
+        parts.forEach(part => { 
             part.el = document.createElement("div");
             part.img = document.createElement("img");
             part.el.setAttribute("data-tooltip", part.description);
