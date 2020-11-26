@@ -46,6 +46,22 @@ const Intersection = {
 
     },
 
+    border: (thisBorder) => {
+
+        const observer = new IntersectionObserver(function (entries, observer){
+            entries.forEach(entry => {
+                if(!entry.isIntersecting) {
+                    return;
+                } else {
+                    thisBorder.classList.add("has-border-right");
+                    observer.unobserve(thisBorder);
+                }
+            });
+        }, Intersection.options);
+
+        observer.observe(thisBorder) 
+    },
+
     subtext: (thisSubtext) => {
         const observer = new IntersectionObserver(function (entries, observer){
             entries.forEach(entry => {

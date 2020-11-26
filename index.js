@@ -2,8 +2,7 @@ import { FullPage } from './Components/Fullpage.js';
 import { Quiz } from './Components/Quiz.js';
 import { Intersection } from './Components/Intersection.js';
 import mustache from 'mustache';
-/* import particlesJS from 'particles.js';
- */
+
 FullPage.init();
 Quiz.init();
 
@@ -55,37 +54,48 @@ randImg.rand();
 // INTERSECTION OBSERVER
 Intersection.particles();
 
+// TITLES
 const titles = document.querySelectorAll(".title");
 titles.forEach(thisTitle => {
 	Intersection.title(thisTitle)
-
 })
 
+// SUBTEXTS
 const subtexts = document.querySelectorAll(".sub-text");
 subtexts.forEach(thisSubtext => {
 	Intersection.subtext(thisSubtext)
 })
 
+// BODY TEXT
 const bodys = document.querySelectorAll('.body-text');
 bodys.forEach(thisBody => {
 	Intersection.body(thisBody);
 })
 
+// LEARN
 const learn = document.querySelector(".learn-text");
 Intersection.learnText(learn);
 
+// USES LIST
 const list = document.querySelector(".uses-list");
 const listItems = list.querySelectorAll('li');
 Intersection.list(listItems)
 
-const exTitle = document.querySelector(".ex-title");
-
+// ALL DIAGRAMS
 const diagrams = document.querySelectorAll(".diagram");
 diagrams.forEach(diagram => {
 	Intersection.img(diagram);
 
 })
 
+// EXPERIMENT TITLE
+const exTitle = document.querySelector(".ex-title");
 Intersection.exTitle(exTitle)
 
+// BORDERS
+const borderColumns = document.querySelectorAll(".title-column");
+borderColumns.forEach(thisColumn => {
+	Intersection.border(thisColumn)
+
+})
 

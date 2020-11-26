@@ -126,10 +126,11 @@ const Quiz = {
           questionNumber.style.display = 'none';
           answerBox.innerHTML = null;
           answerBox.innerHTML = '<h2>Congratulations!</h2><p>You have completed the quiz</p><p>If you haven\'t already, check out the experiment page!</p>'
-          const exBtn = document.createElement("button");
+/*           const exBtn = document.createElement("button");
           exBtn.classList.add("button");
           exBtn.innerText = '🧪 Experiment'
-          answerBox.appendChild(exBtn);
+          exBtn.setAttribute("href", "./experiment.html")
+          answerBox.appendChild(exBtn); */
           celebration.classList.add("is-active-celebration");
           overlay.classList.add("is-active-celebration");
 

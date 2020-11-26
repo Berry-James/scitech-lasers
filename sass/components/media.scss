@@ -44,6 +44,8 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        padding-left: 15px;
+        padding: 15px;
     }
 
     .nav-is-in {
@@ -53,10 +55,16 @@
     .nav-is-out {
         top: -100vh !important;
     }
-
-    .laser-diagram {
-        padding: 0 15px;
+    .slots-container {
+        .laser-diagram {
+            padding: 0 15px;
+        }
     }
+
+    .modal-content {
+        width: 90%;
+    }
+
 
     .quiz-column {
         margin-left: 0 !important;
@@ -68,5 +76,11 @@
         justify-content: center;
         align-items: center;
         padding: 0 5vw;
+    }
+
+    .parts-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
     }
 }

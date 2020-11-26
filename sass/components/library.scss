@@ -1,5 +1,16 @@
+// BORDER KEYFRAMES
+@keyframes borderEntrance{
+    from {
+        border-right: 2px solid transparent;
+    }
+    to {
+        border-right: 2px solid #2f2f2f;
+    }
+}
+
 .has-border-right {
-    border-right: 2px solid #2f2f2f;
+    border-right: 2px solid transparent;
+    animation: borderEntrance 0.3s 0.9s ease-out forwards;
 }
 
 .has-border-bottom {
@@ -116,7 +127,7 @@
 
 .ex-underline {
     transform: scale(0);
-    width: 100%;
+    width: 80vw;
     height: 4px;
     background: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
     border-radius: 25px;

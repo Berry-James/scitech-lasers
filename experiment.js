@@ -8,9 +8,16 @@ Modal.show('Build your very own laser!', 'Assemble the laser from the parts in t
 const burgerBtn = document.querySelector(".hamburger-btn");
 const navLinks = document.querySelector(".nav-links");
 burgerBtn.addEventListener("click", (e) => {
-	navLinks.classList.toggle("is-display-none");
 	burgerBtn.classList.toggle('is-active-hamburger');
-});
+
+	if(navLinks.classList.contains("nav-is-in")) {
+		navLinks.classList.remove('nav-is-in');
+		navLinks.classList.add("nav-is-out");
+	} else {
+		navLinks.classList.remove('nav-is-out');
+		navLinks.classList.add('nav-is-in')
+	}
+})
 
 class Parts {
     constructor(number, position, name, description, image) {
@@ -31,10 +38,10 @@ const Experiment = {
 
         const rootEL = document.querySelector(".experiment");
 
-        const P1 = new Parts(1, 4, 'Focussing Mirror', 'a focussing mirror ', './imgs/laser/parts/mirror.svg');
-        const P2 = new Parts(2, 3, 'Laser Diode', 'a laser diode does stuff', './imgs/laser/parts/diode.png');
-        const P3 = new Parts(3, 1, 'Battery', 'BATTERY HERE', './imgs/laser/parts/battery.png');
-        const P4 = new Parts(4, 2, 'Laser Driver', 'DRIVER HERE', './imgs/laser/parts/driver.png');
+        const P1 = new Parts(1, 4, 'Focussing Mirror', 'A focussing lens', './imgs/laser/parts/mirror.svg');
+        const P2 = new Parts(2, 3, 'Laser Diode', 'A laser diode', './imgs/laser/parts/diode.png');
+        const P3 = new Parts(3, 1, 'Battery', 'A battery', './imgs/laser/parts/battery.png');
+        const P4 = new Parts(4, 2, 'Laser Driver', 'A laser driver', './imgs/laser/parts/driver.png');
 
         const parts = [P1, P2, P3, P4];
 
@@ -111,7 +118,11 @@ const Experiment = {
                     console.log('WRONG')
                 }
                 if(Experiment.counter == 4) {
-                    Modal.show('gz', 'You did it!')
+                    Modal.show('Well Done', 'Mouse over each part of the laser to learn more about it')
+                    const confirmBtn = document.querySelector(".confirm-button");
+                    confirmBtn.addEventListener("click", () => {
+                        Modal.hide();
+                    })
                 }          
             })
             

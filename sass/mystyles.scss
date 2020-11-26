@@ -30,7 +30,7 @@ $size-2: 6rem;
 $size-3: 3rem;
 $size-4: 2rem;
 $size-5: 1.5rem;
-$size-6: 1.2rem;
+$size-6: 1rem;
 
 // update bulma tooltips
 $tooltip-font-size: $size-5;    
@@ -230,6 +230,7 @@ nav {
     height: 80px;
     z-index: 1;
     box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+    padding-left: 50px;
 
     a {
         z-index: 3;
