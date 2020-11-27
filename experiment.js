@@ -2,7 +2,7 @@ import anime from 'animejs';
 import { Modal } from './Components/Modal.js';
 
 // TEST
-Modal.show('Build your very own laser!', 'Assemble the laser from the parts in the box.  Click on the part and then choose where you think it belongs on the diagram')
+Modal.show('Build your very own laser!', 'Assemble the laser from the parts in the box.     <strong>Click on the part at the bottom first</strong> and then click on where you think it belongs on the diagram.')
 
 // HAMBURGER MENU
 const burgerBtn = document.querySelector(".hamburger-btn");
@@ -38,7 +38,7 @@ const Experiment = {
 
         const rootEL = document.querySelector(".experiment");
 
-        const P1 = new Parts(1, 4, 'Focussing Mirror', 'A focussing lens', './imgs/laser/parts/mirror.svg');
+        const P1 = new Parts(1, 4, 'Focusing Mirror', 'A focusing lens', './imgs/laser/parts/mirror.svg');
         const P2 = new Parts(2, 3, 'Laser Diode', 'A laser diode', './imgs/laser/parts/diode.png');
         const P3 = new Parts(3, 1, 'Battery', 'A battery', './imgs/laser/parts/battery.png');
         const P4 = new Parts(4, 2, 'Laser Driver', 'A laser driver', './imgs/laser/parts/driver.png');
@@ -118,11 +118,15 @@ const Experiment = {
                     console.log('WRONG')
                 }
                 if(Experiment.counter == 4) {
-                    Modal.show('Well Done', 'Mouse over each part of the laser to learn more about it')
-                    const confirmBtn = document.querySelector(".confirm-button");
-                    confirmBtn.addEventListener("click", () => {
-                        Modal.hide();
+                    console.log(Experiment.counter)
+                    Modal.show('Well Done', 'You have completed the experiment')
+                    let confirmBtn = document.querySelectorAll(".confirm-button");
+                    confirmBtn.forEach(button => {
+                        button.addEventListener("click", () => {
+                            window.location.href = './index.html'
+                        })
                     })
+
                 }          
             })
             

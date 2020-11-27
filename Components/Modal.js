@@ -13,10 +13,10 @@ const Modal = {
         body.appendChild(modalContainer);
         // modal header
         const modalHeader = modalContainer.querySelector('.modal-header');
-        modalHeader.innerText = textTitle;
+        modalHeader.innerHTML = textTitle;
         // modal body
         const modalBody = modalContainer.querySelector('.modal-body');
-        modalBody.innerText = textBody;
+        modalBody.innerHTML = textBody;
         const confirmBtn = modalContainer.querySelector(".confirm-button");
         confirmBtn.addEventListener("click", () => {
             Modal.hide();
@@ -33,7 +33,6 @@ const Modal = {
         const modal = document.querySelector(".modal");
         const modalContent = modal.querySelector(".modal-content");
         modal.classList.remove('is-active')
-
         modalContent.classList.add("is-leaving-modal");
         modalContent.classList.remove('is-active')
     }
